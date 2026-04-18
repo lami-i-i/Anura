@@ -1,0 +1,206 @@
+<!-- ========================================
+     ÀNÚRÀ ABOUT PAGE
+     ========================================
+     About page with mission, philosophy, core
+     pillars, and full team member profiles.
+     ======================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata & Document Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Ànúrà</title>
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Page-specific styles for About page -->
+    <style>
+        .about-container { max-width: 900px; margin: 4rem auto; padding: 0 5%; }
+        .about-section { margin-bottom: 4rem; }
+        .about-section h2 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-purple); }
+        .about-section p { font-size: 1.1rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem; }
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .pillar-card { padding: 2rem; border-radius: 24px; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); }
+        .pillar-card h3 { color: var(--primary-purple); margin-bottom: 1rem; }
+        .pillar-card p { color: var(--text-light); font-size: 0.95rem; }
+        .pillar-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .about-image { width: 100%; height: 300px; background: linear-gradient(135deg, rgba(192, 124, 212, 0.2), rgba(232, 176, 255, 0.2)); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 2rem 0; border: 2px dashed rgba(192, 124, 212, 0.3); font-weight: 600; color: var(--primary-purple); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .team-card {
+            padding: 2rem;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            text-align: center;
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            cursor: pointer;
+        }
+        .team-card:hover,
+        .team-card.active { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(192, 124, 212, 0.18); border-color: rgba(192, 124, 212, 0.4); }
+        .team-avatar { font-size: 3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
+        .team-avatar img { width: 80px; height: 80px; object-fit: cover; border-radius: 50%; border: 3px solid transparent; transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, width 0.35s ease, height 0.35s ease; }
+        .team-card:hover .team-avatar img,
+        .team-card.active .team-avatar img { transform: scale(1.18); border-color: rgba(192, 124, 212, 0.8); box-shadow: 0 12px 24px rgba(0,0,0,0.12); width: 90px; height: 90px; }
+        .team-card h3 { color: var(--primary-purple); margin-bottom: 0.5rem; white-space: nowrap; }
+        .team-card .title { color: var(--text-light); font-size: 0.85rem; margin-bottom: 0.8rem; font-weight: 500; }
+        .team-card p { color: var(--text-light); font-size: 0.9rem; line-height: 1.6; margin: 0 auto; max-width: 26rem; }
+        .team-bio { max-height: 4.5rem; overflow: hidden; transition: max-height 0.35s ease; }
+        .team-card:hover .team-bio,
+        .team-card.active .team-bio { max-height: 12rem; }
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+           <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero glass-panel hero-container">
+            <h1>About Ànúrà</h1>
+            <p class="subtext">
+                Learn about our mission to empower young girls and women in STEAM.
+            </p>
+        </section>
+
+        <div class="about-container">
+
+            <div class="about-section">
+                <h2>What We Do</h2>
+                <p>Ànúrà is a social impact initiative founded to support and empower young girls and women as they explore opportunities within science, technology, engineering, arts, and mathematics.</p>
+                <p>We create accessible pathways for girls to learn, experiment, and discover their potential in STEAM spaces. We believe that talent and curiosity exist everywhere, and that every girl deserves the opportunity to explore the skills, ideas, and careers that shape the future.</p>
+            </div>
+
+        
+
+            <div class="about-section">
+                <h2>Our Core Pillars</h2>
+                <div class="pillars">
+                    <div class="pillar-card">
+                        <div class="pillar-icon">📚</div>
+                        <h3>Education</h3>
+                        <p>Providing beginner-friendly resources and learning opportunities that make STEAM accessible to all girls.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🎨</div>
+                        <h3>Creativity</h3>
+                        <p>Encouraging creative exploration and innovation through challenges, projects, and activities.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-icon">🤝</div>
+                        <h3>Community</h3>
+                        <p>Building supportive networks where girls can connect, share ideas, and inspire one another.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Mission</h2>
+                <p>Empower young girls and women in STEAM by creating access to learning opportunities, creative exploration, and supportive communities that build confidence and encourage innovation.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Our Vision</h2>
+                <p>We envision a future where girls and women feel confident exploring STEAM spaces, sharing their ideas, building creative solutions, and contributing to the future of innovation.</p>
+            </div>
+
+            <div class="about-section">
+                <h2>Meet the Team</h2>
+                <p>Ànúrà is powered by passionate women dedicated to empowering the next generation of African innovators.</p>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="olamide.jpeg" alt="Olamide Fatunase"></div>
+                        <h3>Olamide Fatunase</h3>
+                        <div class="title">Co-founder & Director</div>
+                        <p class="team-bio">Creative technologist and changemaker. As co-founder & director of Ànúrà, she builds STEAM platforms that empower girls across Nigeria to see themselves as future engineers, developers, and creators. She leads strategy, partnerships, and creative programs that build confidence and open new learning pathways.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👩</div>
+                        <h3>Daniella Akinseli</h3>
+                        <div class="title">Cofounder</div>
+                        <p class="team-bio">Co-creating pathways and designing engaging programs for girls. Daniella focuses on program development, curriculum design, and mentorship, making STEAM learning welcoming, relevant, and uplifting for young learners.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">👩‍💻</div>
+                        <h3>Harriet Ariyo</h3>
+                        <div class="title">Administrative Manager</div>
+                        <p class="team-bio">Ensuring smooth operations and coordination across all initiatives. Harriet supports team logistics, partnerships, and community relations so the whole initiative runs with care and strong execution.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="Hassan Khyrah/Hassan Khyrah.png" alt="Hassan Khyrah"></div>
+                        <h3>Hassan Khyrah</h3>
+                        <div class="title">Social Media Manager</div>
+                        <p class="team-bio">Ànúrà's social media manager, passionate about continuous learning and contributing positively to team goals. Hassan creates engaging content, grows our community voice, and helps girls feel seen online.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="SOTUNBO%20Moradeyo%20Miriam%20/IMG_6636.JPG" alt="Miriam Motunbo"></div>
+                        <h3>Miriam Motunbo</h3>
+                        <div class="title">Researcher</div>
+                        <p class="team-bio">Miriam combines data analysis with on-the-ground research to understand education access and outcomes across Africa. Her work shapes Ànúrà's programming and strategy, guiding the initiative toward meaningful, evidence-based impact.</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar"><img src="Enoabasi%20Eduok/IMG-20260217-WA0031.jpg" alt="Enoabasi Eduok"></div>
+                        <h3>Enoabasi Eduok</h3>
+                        <div class="title">Graphic Designer</div>
+                        <p class="team-bio">Graphic designer and advocacy-driven volunteer supporting STEM-for-Girls work, passionate about education, gender equality, and access to opportunities for young girls. Enoabasi brings visual storytelling and brand energy to every program and campaign.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="anu.html" class="back-link">← Back to Home</a>
+
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">ÀNÚRÀ</div>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+    <script>
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

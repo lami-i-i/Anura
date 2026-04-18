@@ -1,0 +1,331 @@
+<!-- ========================================
+     ÀNÚRÀ WEBSITE - HOMEPAGE
+     ========================================
+     Main landing page for Ànúrà social impact
+     initiative. Contains hero, about, programs,
+     resources, impact, and CTA sections.
+     ======================================== -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata & Document Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ànúrà | Empowering Girls in STEAM</title>
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts Import - Inter (body text) and Sora (headings) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ========================================
+         ANIMATED BACKGROUND BLOBS
+         ======================================== -->
+    <!-- Container for floating background animation elements -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div> <!-- Purple blob top-left -->
+        <div class="blob blob-2"></div> <!-- White blob bottom-right -->
+    </div>
+
+    <!-- ========================================
+         NAVIGATION HEADER
+         ======================================== -->
+    <header class="glass-nav">
+        <!-- Logo linking to homepage -->
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+            <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+
+        <!-- Navigation links -->
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- CTA button in navigation -->
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <!-- ========================================
+         MAIN CONTENT AREA
+         ======================================== -->
+    <main>
+
+        <!-- ========================================
+             HERO SECTION
+             ======================================== -->
+        <!-- Main headline and value proposition -->
+        <section class="hero-container" style="border: 2px solid var(--primary-purple); border-radius: 24px; padding: 3rem; margin: 2rem auto; max-width: 900px; text-align: center;">
+            <div class="image-hero-content">
+                <h1>Empowering Girls to Explore and Thrive in STEAM</h1>
+                <p class="subtext">
+                    Ànúrà is a social impact initiative helping young girls and women discover confidence in science, technology, engineering, arts, and mathematics through creativity, resources, and community.
+                </p>
+                <!-- Primary and secondary CTAs -->
+                <div class="hero-buttons">
+                    <a href="programs.html" class="btn-primary">Explore Programs</a>
+                    <a href="resources.html" class="btn-secondary">Explore Resources</a>
+                </div>
+                <p class="micro-text">Building confident creators and innovators.</p>
+            </div>
+        </section>
+
+        <!-- ========================================
+             ABOUT SECTION - WHAT IS ÀNÚRÀ
+             ======================================== -->
+        <!-- Two-column layout: text + image placeholder -->
+        <section class="split-section" id="about">
+            <!-- Text content introducing Ànúrà -->
+            <div class="glass-card text-content">
+                <h2>What is Ànúrà?</h2>
+                <p>Ànúrà is a social impact initiative founded to support and empower young girls and women as they explore opportunities within science, technology, engineering, arts, and mathematics.</p>
+                <p>We create accessible opportunities, creative challenges, and educational resources that help girls build confidence and discover their potential in STEAM. At Ànúrà, we believe talent and curiosity exist everywhere, and that every girl deserves the opportunity to explore the skills, ideas, and careers that shape the future.</p>
+                <p>We are committed to reducing fear, intimidation, and exclusion from STEAM spaces by creating intentional entry points that feel accessible, creative, and affirming.</p>
+                <!-- Link to full About page -->
+                <a href="about.html" class="text-link" style="display: inline-block; margin-top: 1rem;">Learn More →</a>
+            </div>
+            <!-- Image placeholder (right column) -->
+            <div class="image-content glass-card placeholder-img">
+                <span><img src="anura_181.jpg" alt="Girls Collaborating"></span>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PROGRAMS OVERVIEW SECTION
+             ======================================== -->
+        <!-- Shows first 3 of 6 programs; full list on programs.html -->
+        <section class="grid-section" id="programs">
+            <h2 class="section-title">Our Work</h2>
+            <!-- Three-column grid of program cards -->
+            <div class="card-grid">
+                <!-- Program Card 1: Quarterly Touchpoints -->
+                <div class="glass-card floating-card">
+                    <h3>Quarterly Touchpoints</h3>
+                    <p>Every quarter, Ànúrà releases small activities designed to encourage creativity and exploration in STEAM. These may include challenges, project prompts, opportunity lists, or downloadable project kits.</p>
+                </div>
+
+                <!-- Program Card 2: Resource Library -->
+                <div class="glass-card floating-card">
+                    <h3>Resource Library</h3>
+                    <p>Our resource library provides beginner-friendly guides that help girls explore new skills at their own pace. Resources cover design, coding basics, content creation, and introductions to STEAM careers.</p>
+                </div>
+
+                <!-- Program Card 3: Summer Workshop -->
+                <div class="glass-card floating-card">
+                    <h3>Summer Workshop</h3>
+                    <p>The August Summer Workshop is Ànúrà's flagship annual program featuring deeper learning experiences, creative projects, and collaborative activities designed to inspire innovation and confidence.</p>
+                </div>
+            </div>
+            <!-- CTA to view all programs -->
+            <div class="center-btn-wrapper">
+                <a href="programs.html" class="btn-secondary">View All Our Work</a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             INSIGHTS/BLOG SECTION
+             ======================================== -->
+        <!-- Latest thought leadership pieces from team -->
+        <section class="grid-section" id="insights">
+            <h2 class="section-title">Latest Insights</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Read essays and thought leadership from our community on creativity, technology, STEAM education, and building confidence in tech spaces.</p>
+            <!-- Featured blog posts -->
+            <div class="card-grid">
+                <!-- Blog Post Card 1 -->
+                <div class="glass-card floating-card" onclick="window.location.href='blog-post-1.html'" style="cursor: pointer;">
+                    <h3>The Intersection of Creativity & Technology</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">By Olamide Fatunase • Mar 15, 2026</p>
+                    <p>Why creative thinking isn't optional in tech—it's essential. A reflection on innovation, self-expression, and breaking through the intimidation barrier.</p>
+                    <a href="blog-post-1.html" class="text-link" style="display: inline-block; margin-top: 1rem;">Read Essay →</a>
+                </div>
+
+                <!-- Blog Post Card 2 -->
+                <div class="glass-card floating-card" onclick="window.location.href='blog-post-2.html'" style="cursor: pointer;">
+                    <h3>Why STEAM Matters for African Girls</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">By Miriam Motunbo • Mar 8, 2026</p>
+                    <p>A data-driven look at education access, representation gaps, and the transformative power of STEAM education for girls in underserved communities across Africa.</p>
+                    <a href="blog-post-2.html" class="text-link" style="display: inline-block; margin-top: 1rem;">Read Essay →</a>
+                </div>
+            </div>
+            <!-- CTA to view all blog posts -->
+            <div class="center-btn-wrapper">
+                <a href="blog.html" class="btn-secondary">Read All Essays</a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             OPPORTUNITIES HUB SECTION
+             ======================================== -->
+        <!-- Highlights current opportunities and challenges for girls -->
+        <section class="hub-section glass-panel" id="opportunities">
+            <h2 class="section-title">Explore Opportunities</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Throughout the year, Ànúrà shares opportunities, creative challenges, and resources that encourage girls to explore STEAM in ways that feel exciting and accessible.</p>
+            <!-- Three-column opportunities grid -->
+            <div class="hub-grid">
+                <!-- Opportunity Card 1: Project Challenge -->
+                <div class="hub-card glass-card">
+                    <div class="tags">
+                        <span class="tag category">Project</span>
+                        <span class="tag deadline">Deadline: May 10</span>
+                    </div>
+                    <h3>Mini Website Challenge</h3>
+                    <p>Build a simple webpage and submit your project to be featured.</p>
+                    <a href="#" class="text-link">View Details →</a>
+                </div>
+
+                <!-- Opportunity Card 2: Scholarship Resources -->
+                <div class="hub-card glass-card">
+                    <div class="tags">
+                        <span class="tag category">Opportunities</span>
+                    </div>
+                    <h3>Women in Tech Scholarship List</h3>
+                    <p>A curated list of scholarships for girls pursuing STEM.</p>
+                    <a href="resources.html" class="text-link">Open Resource →</a>
+                </div>
+
+                <!-- Opportunity Card 3: Creative Challenge -->
+                <div class="hub-card glass-card">
+                    <div class="tags">
+                        <span class="tag category">Challenge</span>
+                        <span class="tag deadline">Deadline: June 1</span>
+                    </div>
+                    <h3>Creative STEM Prompt</h3>
+                    <p>Create a short video explaining a science concept.</p>
+                    <a href="#" class="text-link">View Details →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             IMPACT SECTION
+             ======================================== -->
+        <!-- Shows key metrics and achievements -->
+        <section class="grid-section" id="impact">
+            <h2 class="section-title">Our Journey So Far</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Since founding in 2023, Ànúrà has reached 20+ girls through direct programs, and established partnerships with organizations committed to education access.</p>
+            <!-- Impact cards grid -->
+            <div class="impact-grid card-grid">
+                <!-- Impact Card 1: Community -->
+                <div class="glass-card">
+                    <h4> Community</h4>
+                    <p>20+ Girls Reached - Through STEM hackathons, virtual programs, and community engagement, we've directly impacted girls across Nigeria and beyond.</p>
+                </div>
+
+                <!-- Impact Card 2: Impact -->
+                <div class="glass-card">
+                    <h4 Impact</h4>
+                    <p>First STEM Hackathon - In August 2024, 18 girls participated in our flagship event in Lagos with keynote speaker Ms. Lola Aworanti-Ekugo (Chief Digital Officer at FBNQuest).</p>
+                </div>
+
+                <!-- Impact Card 3: Partnerships -->
+                <div class="glass-card">
+                    <h4> Partners</h4>
+                    <p>Strategic Partnerships - Collaborating with Slum2School and The Bloom Africa to ensure access for girls from underserved communities.</p>
+                </div>
+            </div>
+
+
+            <!-- CTA to full impact page -->
+            <div class="center-btn-wrapper">
+                <a href="impact.html" class="btn-secondary">See Full Impact Report</a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             RESOURCE LIBRARY PREVIEW SECTION
+             ======================================== -->
+        <!-- Teaser showing 3 sample resources from library -->
+        <section class="grid-section">
+            <h2 class="section-title">Learn at Your Own Pace</h2>
+            <p style="text-align: center; color: var(--text-light); margin-bottom: 3rem; max-width: 700px; margin-left: auto; margin-right: auto;">Our resource library is designed to make learning simple, accessible, and beginner-friendly. These short guides introduce new ideas and skills that girls can explore independently.</p>
+            <!-- Sample resource cards -->
+            <div class="card-grid">
+                <!-- Resource 1: HTML -->
+                <div class="glass-card floating-card">
+                    <h3>Introduction to HTML</h3>
+                    <p>Learn the basics of how websites work and write your first lines of HTML.</p>
+                    <a href="resources.html" class="text-link">Explore →</a>
+                </div>
+
+                <!-- Resource 2: Canva Design -->
+                <div class="glass-card floating-card">
+                    <h3>Canva Design Basics</h3>
+                    <p>Discover how to create clean and engaging visual designs using Canva.</p>
+                    <a href="resources.html" class="text-link">Explore →</a>
+                </div>
+
+                <!-- Resource 3: STEAM Careers -->
+                <div class="glass-card floating-card">
+                    <h3>Exploring STEAM Careers</h3>
+                    <p>An introduction to different career paths within science, technology, engineering, arts, and mathematics.</p>
+                    <a href="resources.html" class="text-link">Explore →</a>
+                </div>
+            </div>
+            <!-- CTA to full resource library -->
+            <div class="center-btn-wrapper">
+                <a href="resources.html" class="btn-secondary">Browse Resource Library</a>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CALL-TO-ACTION SECTION
+             ======================================== -->
+        <!-- Two CTAs: Join community and support mission -->
+        <section class="cta-section split-section">
+            <!-- CTA 1: Join Community -->
+            <div class="glass-panel cta-box">
+                <h2>Join the Community</h2>
+                <p>Be part of a growing network of girls exploring creativity, technology, and innovation together.</p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Get in Touch</a>
+                    <a href="contact.html" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+
+            <!-- CTA 2: Support the Mission -->
+            <div class="glass-panel cta-box highlight-box">
+                <h2>Support the Mission</h2>
+                <p>Your support helps Ànúrà provide opportunities, learning resources, and programs that empower girls.</p>
+                <a href="donate.html" class="btn-primary">Donate Today</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="glass-footer">
+        <!-- Footer content with logo and links -->
+        <div class="footer-content">
+            <!-- Footer branding -->
+            <div class="footer-logo">ÀNÚRÀ</div>
+            <!-- Footer navigation links -->
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <!-- Copyright information -->
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT - Animations & Interactions
+         ======================================== -->
+    <!-- Link to external JavaScript file for animations -->
+    <script src="animations.js"></script>
+</body>
+</html>

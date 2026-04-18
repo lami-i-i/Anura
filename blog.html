@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights & Essays | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .blog-container { max-width: 1100px; margin: 4rem auto; padding: 0 5%; }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 4rem; }
+
+        .blog-card {
+            position: relative;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--glass-shadow);
+            padding: 2.5rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 48px rgba(192, 124, 212, 0.2);
+        }
+
+        .blog-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .blog-author {
+            font-weight: 600;
+            color: var(--primary-purple);
+        }
+
+        .blog-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .blog-avatar {
+            font-size: 2.5rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-purple), #a85fb8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(192, 124, 212, 0.25);
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            font-weight: 700;
+        }
+
+        .blog-excerpt {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .blog-read-more {
+            display: inline-block;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .blog-read-more:hover {
+            border-bottom-color: var(--primary-purple);
+            transform: translateX(4px);
+        }
+
+        .blog-divider {
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-purple), transparent);
+            margin-bottom: 1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin: 2rem 0;
+            color: var(--primary-purple);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+        }
+
+        .submission-section {
+            margin: 5rem 0;
+            padding: 3rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(192, 124, 212, 0.1), rgba(192, 124, 212, 0.05));
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .submission-section h2 {
+            font-size: 2rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .submission-section p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .submission-form {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(192, 124, 212, 0.3);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.7);
+            color: var(--text-dark);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-purple);
+            box-shadow: 0 0 0 3px rgba(192, 124, 212, 0.1);
+        }
+
+        .discussion-section {
+            margin: 5rem 0;
+            padding: 3rem;
+            border-radius: 24px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .discussion-section h2 {
+            font-size: 2rem;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .discussion-section p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .discussion-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .discussion-card {
+            padding: 2rem;
+            border-radius: 16px;
+            background: rgba(192, 124, 212, 0.08);
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .discussion-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(192, 124, 212, 0.15);
+        }
+
+        .discussion-icon {
+            font-size: 2.5rem;
+        }
+
+        .discussion-card h3 {
+            color: var(--primary-purple);
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .discussion-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .discussion-card .btn-link {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-purple), #a85fb8);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .discussion-card:hover .btn-link {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(192, 124, 212, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .blog-card { padding: 2rem; }
+            .blog-card-header { flex-direction: column; }
+            .blog-avatar { width: 50px; height: 80px; font-size: 2rem; }
+            .submission-section { padding: 2rem; margin: 3rem 0; }
+            .submission-form { padding: 1.5rem; }
+            .discussion-section { padding: 2rem; margin: 3rem 0; }
+            .discussion-links { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+           <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="hero-container image-hero-section" style="margin: 2rem 5%; border-radius: 32px;">
+            <div class="image-hero-content">
+                <h1 style="color: #1a1a1a; text-shadow: none; font-size: 2.8rem;">✨ Insights & Essays</h1>
+                <p class="subtext" style="color: #4a4a4a; text-shadow: none;">
+                    Thought leadership and creative explorations about STEAM, technology, creativity, and empowering girls. Read essays from our community and guest contributors.
+                </p>
+            </div>
+        </section>
+
+        <div class="blog-container">
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <div class="blog-card" onclick="window.location.href='blog-post-1.html'">
+                    <div class="blog-card-header">
+                        <div class="blog-meta">
+                            <span class="blog-author">Olamide Fatunase</span>
+                            <span class="blog-date">Mar 15, 2026</span>
+                        </div>
+                        <div class="blog-avatar">💡</div>
+                    </div>
+                    <div class="blog-divider"></div>
+                    <h3 class="blog-title">The Intersection of Creativity & Technology</h3>
+                    <p class="blog-excerpt">
+                        Why creative thinking isn't a luxury in tech—it's a requirement. Explore how creativity and innovation work together, and why girls shouldn't feel intimidated by building in the digital space.
+                    </p>
+                    <a href="blog-post-1.html" class="blog-read-more">Read Essay →</a>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="blog-card" onclick="window.location.href='blog-post-2.html'">
+                    <div class="blog-card-header">
+                        <div class="blog-meta">
+                            <span class="blog-author">Miriam Motunbo</span>
+                            <span class="blog-date">Mar 8, 2026</span>
+                        </div>
+                        <div class="blog-avatar">🌍</div>
+                    </div>
+                    <div class="blog-divider"></div>
+                    <h3 class="blog-title">Why STEAM Matters for African Girls</h3>
+                    <p class="blog-excerpt">
+                        A data-driven look at education access, representation gaps, and the transformative power of STEAM education for girls in underserved communities across Africa.
+                    </p>
+                    <a href="blog-post-2.html" class="blog-read-more">Read Essay →</a>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="blog-card" onclick="window.location.href='blog-post-3.html'">
+                    <div class="blog-card-header">
+                        <div class="blog-meta">
+                            <span class="blog-author">Ade Okyere</span>
+                            <span class="blog-date">Feb 28, 2026</span>
+                        </div>
+                        <div class="blog-avatar">🚀</div>
+                    </div>
+                    <div class="blog-divider"></div>
+                    <h3 class="blog-title">Overcoming Impostor Syndrome in Tech</h3>
+                    <p class="blog-excerpt">
+                        A personal essay on navigating self-doubt when entering tech spaces, practical strategies that actually work, and how community plays a vital role in building confidence.
+                    </p>
+                    <a href="blog-post-3.html" class="blog-read-more">Read Essay →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-container">
+            <!-- Submit Your Essay Section -->
+            <div class="submission-section">
+                <h2>📝 Submit Your Essay</h2>
+                <p>Have a story about creativity, technology, STEAM education, or your journey in tech? We'd love to publish your work! Share your insights with our growing community of girls exploring STEAM.</p>
+
+                <form class="submission-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="e.g., Jane Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="title">Essay Title</label>
+                        <input type="text" id="title" name="title" placeholder="e.g., How I Discovered My Passion for Code" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="excerpt">Brief Excerpt</label>
+                        <textarea id="excerpt" name="excerpt" placeholder="A 2-3 sentence summary of your essay..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="essay">Full Essay</label>
+                        <textarea id="essay" name="essay" placeholder="Share your essay here (500+ words appreciated)..." required style="min-height: 250px;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 1rem; font-size: 1rem;">Submit Essay</button>
+                </form>
+
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-light);">
+                    All submissions go through our editorial team. We'll review and be in touch within 2 weeks. 💜
+                </p>
+            </div>
+
+            <!-- Discussion Section -->
+            <div class="discussion-section">
+                <h2>💬 Join the Conversation</h2>
+                <p>Love an essay? Have thoughts to share? Connect with our community and engage in meaningful discussions about STEAM, creativity, and building confidence in tech.</p>
+
+                <div class="discussion-links">
+                    <a href="#" class="discussion-card">
+                        <div class="discussion-icon">💬</div>
+                        <h3>WhatsApp Community</h3>
+                        <p>Join our active WhatsApp group to discuss essays and share insights in real-time</p>
+                        <span class="btn-link">Join Group</span>
+                    </a>
+
+                    <a href="contact.html" class="discussion-card">
+                        <div class="discussion-icon">✉️</div>
+                        <h3>Email Us</h3>
+                        <p>Send your thoughts, feedback, or essay ideas directly to the Ànúrà team</p>
+                        <span class="btn-link">Contact Us</span>
+                    </a>
+
+                    <a href="anu.html" class="discussion-card">
+                        <div class="discussion-icon">👥</div>
+                        <h3>Community Events</h3>
+                        <p>Attend essay discussions and STEAM conversations with other girls and mentors</p>
+                        <span class="btn-link">Explore</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog-container">
+            <a href="anu.html" class="back-link">← Back to Home</a>
+        </div>
+
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">ÀNÚRÀ</div>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>

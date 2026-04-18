@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why STEAM Matters for African Girls | Ànúrà</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .post-container { max-width: 800px; margin: 4rem auto; padding: 0 5%; }
+        .post-content { line-height: 1.9; color: var(--text-dark); }
+        .post-content h2 { font-size: 1.8rem; color: var(--primary-purple); margin: 3rem 0 1.5rem 0; font-weight: 700; }
+        .post-content h3 { font-size: 1.4rem; color: var(--primary-purple); margin: 2.5rem 0 1rem 0; font-weight: 700; }
+        .post-content p { font-size: 1.05rem; margin-bottom: 1.5rem; }
+        .post-content ul, .post-content ol { margin: 1.5rem 0 1.5rem 2rem; }
+        .post-content li { margin-bottom: 0.8rem; font-size: 1.05rem; }
+        .post-content strong { color: var(--primary-purple); font-weight: 600; }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .meta-label { font-size: 0.8rem; color: var(--text-light); text-transform: uppercase; font-weight: 600; }
+        .meta-value { font-size: 1.1rem; color: var(--primary-purple); font-weight: 600; }
+        .read-time { font-size: 1rem; color: var(--text-light); }
+
+        .post-divider {
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-purple), transparent);
+            margin: 3rem 0;
+        }
+
+        .highlight-box {
+            background: rgba(192, 124, 212, 0.1);
+            border-left: 4px solid var(--primary-purple);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+
+        .stat-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(192, 124, 212, 0.08);
+            border-radius: 12px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+        }
+
+        .author-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .author-avatar {
+            font-size: 3rem;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-purple), #a85fb8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(192, 124, 212, 0.25);
+        }
+
+        .author-info h4 { color: var(--primary-purple); font-size: 1.2rem; margin-bottom: 0.3rem; }
+        .author-title { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
+        .author-bio { color: var(--text-light); line-height: 1.7; }
+
+        .back-link { display: inline-block; margin: 2rem 0; color: var(--primary-purple); text-decoration: none; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+
+        .discussion-section {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            border-radius: 24px;
+            background: linear-gradient(135deg, rgba(192, 124, 212, 0.1), rgba(192, 124, 212, 0.05));
+            border: 1px solid var(--glass-border);
+            text-align: center;
+        }
+
+        .discussion-section h3 {
+            color: var(--primary-purple);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .discussion-section p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .discussion-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .discussion-link-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(192, 124, 212, 0.08);
+            border: 1px solid var(--glass-border);
+            text-decoration: none;
+            color: var(--primary-purple);
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .discussion-link-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(192, 124, 212, 0.15);
+            background: rgba(192, 124, 212, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .post-container { margin: 2rem auto; }
+            .post-meta { flex-direction: column; align-items: flex-start; }
+            .author-section { flex-direction: column; text-align: center; }
+            .author-avatar { margin: 0 auto; }
+            .discussion-section { padding: 1.5rem; }
+            .discussion-links { grid-template-columns: 1fr; }
+            .stat-box { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <header class="glass-nav">
+        <a href="anu.html" class="logo" style="text-decoration: none; display: flex; align-items: center;">
+         <img src="Ànúrà (Logo).png" alt="ÀNÚRÀ Logo" style="height: 40px; width: auto;">
+        <nav>
+            <ul class="nav-links">
+                <li><a href="anu.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="contact.html" class="btn-primary nav-btn">Join Community</a>
+    </header>
+
+    <main>
+        <section class="image-hero-section" style="margin: 2rem 5%; border-radius: 32px;">
+            <div class="image-hero-content">
+                <h1 style="color: #1a1a1a; text-shadow: none; font-size: 2.8rem;">🌍 Why STEAM Matters for African Girls</h1>
+                <p class="subtext" style="color: #4a4a4a; text-shadow: none;">
+                    On education access, representation gaps, and the transformative power of STEAM education for girls in underserved communities.
+                </p>
+            </div>
+        </section>
+
+        <div class="post-container">
+            <div class="post-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Author</span>
+                    <span class="meta-value">Miriam Motunbo</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Published</span>
+                    <span class="meta-value">Mar 8, 2026</span>
+                </div>
+                <div class="meta-item">
+                    <span class="read-time">📖 7 min read</span>
+                </div>
+            </div>
+
+            <div class="post-content">
+                <p>
+                    Education has always been my lens. As a researcher and now with Ànúrà, I've spent years studying education access, outcomes, and particularly, how gender intersects with opportunity in Africa. What I've learned is both heartbreaking and hopeful: STEAM education can be transformative. But only if we make it accessible.
+                </p>
+
+                <p>
+                    Let's start with the story the data tells.
+                </p>
+
+                <div class="stat-box">
+                    <div class="stat-item">
+                        <div class="stat-number">66%</div>
+                        <div class="stat-label">Girls who don't complete secondary school in some African regions</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1 in 5</div>
+                        <div class="stat-label">Tech graduates in Africa are women</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">$32B</div>
+                        <div class="stat-label">Annual GDP loss from gender inequality in Africa</div>
+                    </div>
+                </div>
+
+                <h2>The Gap</h2>
+                <p>
+                    When people talk about education gaps in Africa, they often focus on access itself—schools that exist, teachers trained, resources distributed. But there's a layer beneath that: the confidence gap. The representation gap. The "this isn't for girls like me" gap.
+                </p>
+
+                <p>
+                    In STEAM specifically, this manifests in multiple ways:
+                </p>
+
+                <ul>
+                    <li><strong>Visibility:</strong> Girls rarely see women in science, tech, and engineering spaces. When representation is low, aspiration follows.</li>
+                    <li><strong>Access:</strong> STEAM education often requires resources—computers, lab equipment, internet. These are luxury items in many communities.</li>
+                    <li><strong>Cultural messaging:</strong> STEM is seen as masculine. Arts and crafts are feminine. The artificial separation is deeply ingrained.</li>
+                    <li><strong>Encouragement:</strong> Even when girls excel in STEAM subjects, teachers and families may steer them toward "safer" paths.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    "Education isn't just about individual advancement. It's about collective possibility. When we exclude half the population from STEAM, we exclude half the potential solutions to Africa's greatest challenges."
+                </div>
+
+                <h2>Why This Matters Right Now</h2>
+                <p>
+                    Africa's future is being built now. Technology is becoming infrastructure. Innovation is becoming necessity. The continent is home to over 1.4 billion people and faces complex challenges in healthcare, agriculture, energy, water—all areas where STEAM solutions are needed.
+                </p>
+
+                <p>
+                    But here's the thing: if we build that future without the voices, perspectives, and leadership of African girls and women, we're building an incomplete future. We're solving problems from only one angle.
+                </p>
+
+                <p>
+                    Research shows us that diverse teams across gender, race, and background produce better ideas, more innovative solutions, and more sustainable outcomes. Yet in tech, in science, in engineering across Africa, diversity remains a distant goal. The intersection of being African, female, and ambitious in STEAM is still an outlier experience.
+                </p>
+
+                <h2>The Transformative Power</h2>
+                <p>
+                    But here's where hope enters. Over the past few years, I've watched girls engage with STEAM education in ways that shift their entire trajectory:
+                </p>
+
+                <ul>
+                    <li>A girl who thought she "wasn't math smart" discovers coding and builds a prototype app to solve a problem in her community</li>
+                    <li>A young woman learns design and creates business opportunities, becoming financially independent</li>
+                    <li>Girls who felt isolated and "not enough" suddenly find community—other girls like them who are curious, ambitious, and ambitious</li>
+                    <li>Young women who were never encouraged to dream suddenly see themselves as innovators, problem-solvers, and leaders</li>
+                </ul>
+
+                <p>
+                    STEAM education doesn't just teach skills. It teaches girls that they're capable of shaping the world. It expands possibility. It rewires the neural pathways of "this is for people like me" to "this is for ME."
+                </p>
+
+                <h2>What We Must Do</h2>
+                <p>
+                    If we're serious about STEAM education for African girls, we need:
+                </p>
+
+                <ol>
+                    <li><strong>Access without barriers:</strong> Online programs, mobile learning, resources that don't require expensive infrastructure</li>
+                    <li><strong>Community and mentorship:</strong> Girls need to see themselves reflected in educators and leaders</li>
+                    <li><strong>Culturally relevant teaching:</strong> STEAM shouldn't feel like a Western import. It should solve real problems in our communities</li>
+                    <li><strong>Early intervention:</strong> The confidence gap starts young. We need programs at age 10, not 18</li>
+                    <li><strong>Narrative change:</strong> We need to stop talking about getting girls "into" STEAM and start celebrating that they belong there already</li>
+                </ol>
+
+                <div class="post-divider"></div>
+
+                <p>
+                    At Ànúrà, we're focused on this work. Not because it's trendy or aspirational, but because the data is clear: STEAM education for African girls is not a nice-to-have. It's an economic imperative, a social justice issue, and a development necessity.
+                </p>
+
+                <p>
+                    Every girl who learns to code, who wins a science competition, who realizes she can build solutions—she becomes proof for the next girl. She becomes the representation that was missing for her. She becomes the change.
+                </p>
+
+                <p style="margin-top: 2rem; font-size: 0.95rem; color: var(--text-light); font-style: italic;">
+                    The skills gap is real, but the opportunity gap is bigger. Let's close both.
+                </p>
+            </div>
+
+            <div class="author-section">
+                <div class="author-avatar">👩‍🔬</div>
+                <div class="author-info">
+                    <h4>Miriam Motunbo</h4>
+                    <p class="author-title">Researcher, Ànúrà Initiative</p>
+                    <p class="author-bio">
+                        Miriam combines data analysis with on-the-ground research to understand education access and outcomes across Africa. Her work shapes Ànúrà's programming and strategy.
+                    </p>
+                </div>
+            </div>
+
+            <div class="discussion-section">
+                <h3>💬 What do you think?</h3>
+                <p>Loved this essay? Have insights on STEAM education or ideas for your community? Connect with our community to discuss and collaborate.</p>
+                <div class="discussion-links">
+                    <a href="#" class="discussion-link-item">💬 WhatsApp Group</a>
+                    <a href="contact.html" class="discussion-link-item">✉️ Email Us</a>
+                    <a href="blog.html" class="discussion-link-item">📝 More Essays</a>
+                </div>
+            </div>
+
+            <a href="blog.html" class="back-link">← Back to Essays</a>
+        </div>
+
+    </main>
+
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-logo">ÀNÚRÀ</div>
+            <ul class="footer-links">
+                <li><a href="about.html">About</a></li>
+                <li><a href="programs.html">Programs</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Ànúrà Initiative. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="animations.js"></script>
+</body>
+</html>
